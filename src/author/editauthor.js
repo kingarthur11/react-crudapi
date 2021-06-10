@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import AuthoDataService from "../service";
-
+import AuthoDataService from "../author.service";
 
 export default class Tutorial extends Component {
   constructor(props) {

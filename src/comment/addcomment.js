@@ -1,18 +1,18 @@
 import React, { Component } from "react";
-import AuthoDataService from "../author.service";
+import AuthoDataService from "../comment.service";
 
 export default class AddTutorial extends Component {
   constructor(props) {
     super(props);
     this.onChangeName = this.onChangeName.bind(this);
-    this.onChangeEmail = this.onChangeEmail.bind(this);
-    this.saveAuthor = this.saveAuthor.bind(this);
-    this.newAuthor = this.newAuthor.bind(this);
+    this.onChangeBody = this.onChangeBody.bind(this);
+    this.saveComment = this.saveComment.bind(this);
+    this.newComment = this.newComment.bind(this);
 
     this.state = {
       id: null,
       name: "",
-      email: "",
+      body: "",
     };
   }
 
@@ -22,16 +22,16 @@ export default class AddTutorial extends Component {
     });
   }
 
-  onChangeEmail(e) {
+  onChangeBody(e) {
     this.setState({
       description: e.target.value
     });
   }
 
-  saveAuthor() {
+  saveComment() {
     var data = {
       name: this.state.name,
-      email: this.state.email
+      body: this.state.body
     };
 
     AuthoDataService.create(data)
@@ -39,7 +39,7 @@ export default class AddTutorial extends Component {
         this.setState({
           id: response.data.id,
           name: response.data.name,
-          email: response.data.email,
+          body: response.data.body,
         });
         console.log(response.data);
       })
@@ -48,12 +48,11 @@ export default class AddTutorial extends Component {
       });
   }
 
-  newAuthor() {
+  newComment() {
     this.setState({
       id: null,
       name: "",
-      email: "",
-      submitted: false
+      body: "",
     });
   }
 
@@ -63,7 +62,7 @@ export default class AddTutorial extends Component {
         {this.state.submitted ? (
           <div>
             <h4>You submitted successfully!</h4>
-            <button onClick={this.newAuthor}>
+            <button onClick={this.newComment}>
               Add
             </button>
           </div>
@@ -81,18 +80,18 @@ export default class AddTutorial extends Component {
             </div>
 
             <div>
-              <label>Email</label>
+              <label>body</label>
               <input
                 type="text"
-                id="email"
+                id="body"
                 required
-                value={this.state.email}
-                onChange={this.onChangeEmail}
-                name="email"
+                value={this.state.body}
+                onChange={this.onChangeBody}
+                name="body"
               />
             </div>
 
-            <button onClick={this.saveAuthor} >
+            <button onClick={this.saveComment} >
               Submit
             </button>
           </div>
