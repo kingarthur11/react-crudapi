@@ -24,25 +24,25 @@ export default class EditAuthor extends Component {
   }
 
   onChangeName(e) {
-    const title = e.target.value;
+    const name = e.target.value;
 
     this.setState(function(prevState) {
       return {
         currentAuthor: {
           ...prevState.currentAuthor,
-          title: title
+          name: name
         }
       };
     });
   }
 
   onChangeEmail(e) {
-    const description = e.target.value;
+    const email = e.target.value;
     
     this.setState(prevState => ({
       currentAuthor: {
         ...prevState.currentAuthor,
-        description: description
+        email: email
       }
     }));
   }

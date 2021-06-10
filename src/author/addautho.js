@@ -18,13 +18,13 @@ export default class AddAuthor extends Component {
 
   onChangeName(e) {
     this.setState({
-      title: e.target.value
+        name: e.target.value
     });
   }
 
   onChangeEmail(e) {
     this.setState({
-      description: e.target.value
+        email: e.target.value
     });
   }
 
@@ -60,14 +60,6 @@ export default class AddAuthor extends Component {
   render() {
     return (
       <div>
-        {this.state.submitted ? (
-          <div>
-            <h4>You submitted successfully!</h4>
-            <button onClick={this.newAuthor}>
-              Add
-            </button>
-          </div>
-        ) : (
           <div>
             <div>
               <label>Name</label>
@@ -96,7 +88,6 @@ export default class AddAuthor extends Component {
               Submit
             </button>
           </div>
-        )}
       </div>
     );
   }
