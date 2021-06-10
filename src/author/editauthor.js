@@ -12,13 +12,12 @@ export default class EditAuthor extends Component {
 
     this.state = {
       currentAuthor: {
-        id: null,
+        id: this.props.match.params.id,
         name: "",
         email: "",
       },
     };
   }
-
   componentDidMount() {
     this.getAuthor(this.props.match.params.id);
   }

@@ -14,10 +14,10 @@ function App() {
           <Switch>
               <Route exact path="/addauthor"> <AddAuthor /></Route>
               <Route exact path="/getallauthor"> <GetAllAuthor /></Route>
-              <Route exact path="/editauthor"><EditAuthor /></Route>
+              <Route exact path="/editauthor/:id" render={(props) => <EditAuthor {...props} match={this.handleMatch}/>}></Route>
               <Route exact path="/addcomment"> <AddComment /></Route>
               <Route exact path="/getallcomment"> <GetAllComment /></Route>
-              <Route exact path="/editcomment"><EditComment /></Route>
+              <Route exact path="/editcomment/:id"><EditComment /></Route>
           </Switch>
       </Router>
     </div>
