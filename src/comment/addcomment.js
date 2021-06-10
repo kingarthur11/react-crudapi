@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import AuthoDataService from "../comment.service";
 
-export default class AddTutorial extends Component {
+export default class AddComment extends Component {
   constructor(props) {
     super(props);
     this.onChangeName = this.onChangeName.bind(this);

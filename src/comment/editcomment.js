@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import AuthoDataService from "../comment.service";
 
 
-export default class Tutorial extends Component {
+export default class EditComment extends Component {
   constructor(props) {
     super(props);
     this.onChangeName = this.onChangeName.bind(this);
@@ -15,7 +15,7 @@ export default class Tutorial extends Component {
       currentComment: {
         id: null,
         name: "",
-        email: "",
+        body: "",
       },
     };
   }
@@ -65,7 +65,7 @@ export default class Tutorial extends Component {
     var data = {
       id: this.state.currentComment.id,
       name: this.state.currentComment.name,
-      email: this.state.currentComment.email,
+      body: this.state.currentComment.body,
     };
 
     AuthoDataService.update(this.state.currentComment.id, data)
@@ -103,7 +103,7 @@ export default class Tutorial extends Component {
     AuthoDataService.delete(this.state.currentComment.id)
       .then(response => {
         console.log(response.data);
-        this.props.history.push('/author')
+        this.props.history.push('/comment')
       })
       .catch(e => {
         console.log(e);
@@ -128,11 +128,11 @@ export default class Tutorial extends Component {
                 />
               </div>
               <div>
-                <label>Email</label>
+                <label>body</label>
                 <input
                   type="text"
-                  id="email"
-                  value={currentComment.email}
+                  id="body"
+                  value={currentComment.body}
                   onChange={this.onChangeBody}
                 />
               </div>

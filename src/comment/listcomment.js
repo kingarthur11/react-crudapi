@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import AuthoDataService from "../comment.service";
 
-export default class TutorialsList extends Component {
+export default class ListComment extends Component {
   constructor(props) {
     super(props);
     this.getallAllAuthors = this.getallAllAuthors.bind(this);
