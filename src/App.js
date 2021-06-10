@@ -2,7 +2,10 @@ import React from "react";
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import AddAuthor from './author/addautho'
 import GetAllAuthor from './author/listauthor'
-import EditAuthor from './author/author'
+import EditAuthor from './author/editauthor'
+import AddComment from './comment/addcomment'
+import GetAllComment from './comment/listcomment'
+import EditComment from './comment/editcomment'
 
 function App() {
   return (
@@ -12,6 +15,9 @@ function App() {
               <Route exact path="/addauthor"> <AddAuthor /></Route>
               <Route exact path="/getallauthor"> <GetAllAuthor /></Route>
               <Route exact path="/editauthor"><EditAuthor /></Route>
+              <Route exact path="/addcomment"> <AddComment /></Route>
+              <Route exact path="/getallcomment"> <GetAllComment /></Route>
+              <Route exact path="/editcomment"><EditComment /></Route>
           </Switch>
       </Router>
     </div>
